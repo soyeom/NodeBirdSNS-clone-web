@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <form method="post">
-        <div>
-            <label for ="email">이메일</label>
-            <input type="email">
-        </div>
-        <div>
-            <label for ="email">비밀번호</label>
-            <input type="password">
-        </div>
-        <button type="submit">로그인</button>
-    </form>
+    <div class="container">
+        <form action="/auth/login" method="post">
+            <div>
+                <label for ="email">이메일</label>
+                <input type="email">
+            </div>
+            <div>
+                <label for ="password">비밀번호</label>
+                <input type="password">
+            </div>
+            <button type="submit" class="btn">로그인</button>
+            <a href="/auth/kakao" class="btn">카카오톡</a>
+            <a href="/join" class="btn">회원가입</a>
+        </form>
+    </div>
   </body>
+  <footer>
+    Made by
+    <a href="https://github.com/soyeom">Soyeon</a>
+  </footer>
+  {% block content %}
+  {% endblock %}
 </html>

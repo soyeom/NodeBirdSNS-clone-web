@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+    <div class="timeline">
+        <form action="/hashtag" method="post">
+            <input type="text" name="hashtag" placeholder="태그 검색">
+            <button class="btn">검색</button>
+        </form>
+    </div>
 {% endblock %}
