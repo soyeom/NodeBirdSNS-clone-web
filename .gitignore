@@ -3,3 +3,5 @@ package-lock.json
 
 # dotenv environment variable files
 .env
+
+config.json
