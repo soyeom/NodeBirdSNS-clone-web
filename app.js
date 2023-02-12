@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const pageRouter = require('./routes');
+const pageRouter = require('./routes/page');
 
 const app = express();
 app.set('port', process.env.PORT || 8001);
