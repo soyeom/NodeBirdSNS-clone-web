@@ -1,7 +1,6 @@
 node_modules
 package-lock.json
+config.json
 
 # dotenv environment variable files
 .env
-
-config.json
