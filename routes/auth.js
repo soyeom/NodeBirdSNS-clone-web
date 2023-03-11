@@ -42,9 +42,16 @@ router.post('/login', () => {
                 console.error(loginError);
                 return next(loginError);
             }
+            //세션 쿠키를 브라우저로 보낸다.
             return res.redirect('/');
         });
     }) (req, res, next);
+});
+
+router.get('/logout', isLoggedIn, (req, res) => {
+    req.logOut();
+    req.session.destroy();
+    res.redirect('/');
 });
 
 module.exports = router;
