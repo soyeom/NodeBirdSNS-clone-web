@@ -5,6 +5,7 @@ const path = require('path');
 const session = require('express-session');
 const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
+const passport = require('passport');
 
 dotenv.config();
 
@@ -43,6 +44,10 @@ app.use(session({
         secure: false,
     },
 }));
+//로그인 이후의 요청, passport는 세션을 받아서 처리
+//passport/index.js의 deserializeUser로 감
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', pageRouter);
 app.use('/auth', authRouter);

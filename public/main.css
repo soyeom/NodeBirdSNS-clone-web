@@ -1,15 +1,9 @@
+* {box-sizing: border-box;}
 html, body { margin: 0; }
-a { text-decoration: none; }
-input { 
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid lightslategray;
-}
-.container {
-    background: lightcoral;
-}
 .btn {
+    display: inline-block;
     height: 37px;
+    line-height: 37px;
     padding: 0 5px;
     cursor: pointer;
     background: white;
@@ -18,4 +12,11 @@ input {
     color: crimson;
     font-size: 12px;
 }
+a { text-decoration: none; }
+input[type='text'], input[type='email'], input[type='password'], textarea { 
+    border-radius: 4px;
+    border: 1px solid lightslategray;
+    padding: 10px;
+}
+input { margin-bottom: 15px; }
 footer { text-align: center; }

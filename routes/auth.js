@@ -48,7 +48,7 @@ router.post('/login', () => {
     }) (req, res, next);
 });
 
-router.get('/logout', isLoggedIn, (req, res) => {
+router.get('/logout', (req, res) => {
     req.logOut();
     req.session.destroy();
     res.redirect('/');
