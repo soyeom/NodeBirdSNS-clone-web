@@ -27,6 +27,7 @@ router.post('/join', async(req, res, next) => {
     }
 });
 
+//로그인 하기 전이니까 req.user가 안 들어있음
 router.post('/login', () => {
     //미들웨어 내의 미들웨어에는 (req, res, next)를 붙임
     passport.authenticate('local', (authError, user, info) => {
@@ -48,6 +49,7 @@ router.post('/login', () => {
     }) (req, res, next);
 });
 
+//로그아웃 하기 전이니까 req.user가 들어 있음
 router.get('/logout', (req, res) => {
     req.logOut();
     req.session.destroy();

@@ -44,7 +44,8 @@ app.use(session({
         secure: false,
     },
 }));
-//로그인 이후의 요청, passport는 세션을 받아서 처리
+
+//로그인 이후의 요청, passport는 세션을 받아서 처리하기 때문에 세션 미들웨어 밑에 위치
 //passport/index.js의 deserializeUser로 감
 app.use(passport.initialize());
 app.use(passport.session());
