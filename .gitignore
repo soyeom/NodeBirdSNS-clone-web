@@ -4,3 +4,5 @@ config.json
 
 # dotenv environment variable files
 .env
+# debug files
+.vscode

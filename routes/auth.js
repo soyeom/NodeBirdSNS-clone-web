@@ -1,8 +1,8 @@
 const express = require('express');
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const passport = require('passport');
 
 const router = express.Router();
 
@@ -37,6 +37,7 @@ router.post('/login', isLoggedIn, (req, res, next) => {
             return next(authError);
         }
         if(!user) {
+            console.log(user);
             return res.redirect(`/?loginError=${info.message}`);
         }
         return req.login(user, (loginError) => {
