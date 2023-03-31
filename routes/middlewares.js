@@ -1,5 +1,5 @@
 exports.isLoggedIn = (req, res, next) => {
-    if(req.isAutenticated()) {
+    if(req.isAuthenticated()) {
         next();
     }
     else {
@@ -8,7 +8,7 @@ exports.isLoggedIn = (req, res, next) => {
 };
 
 exports.isNotLoggedIn = (req, res, next) => {
-    if(!req.isAutenticated()) {
+    if(!req.isAuthenticated()) {
         next();
     }
     else {
