@@ -12,8 +12,8 @@ module.exports = class Domain extends Sequelize.Model {
                 type: Sequelize.ENUM('free', 'premium'), //좀 더 상세한 문자열
                 allowNull: false,
             },
-            clientSecret: { //키 발급
-                type: Sequelize.STRING(36),
+            clientSecret: { //식별자 발급
+                type: Sequelize.UUID,
                 allowNull: false,
             },
         }, {

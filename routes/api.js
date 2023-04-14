@@ -1,6 +1,6 @@
 /*
 const express = require('express');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid'); //uuidv4는 랜덤으로 식별자를 부여
 const { User, Domain } = require('../models');
 const { isLoggedIn } = require('./middlewares');
 
@@ -18,6 +18,22 @@ router.get('/', async (req, res, next) => {
         });
     } catch(err) {
         console.error(err);
+        next(err);
     }
-})
+});
+
+router.post('/domain', isLoggedIn, async(req, res, next) => {
+    try {
+        await Domain.create({
+            userId: req.user.id,
+            host: req.body.host,
+            type: req.body.type,
+            clientSecret: uuidv4(),
+        });
+        res.redirect('/');
+    } catch(err) {
+        console.error(err);
+        next(err);
+    }
+});
 */
