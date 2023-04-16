@@ -1,4 +1,3 @@
-/*
 const Sequelize = require('sequelize');
 
 module.exports = class Domain extends Sequelize.Model {
@@ -28,4 +27,3 @@ module.exports = class Domain extends Sequelize.Model {
         db.Domain.belongsTo(db.User);
     }
 };
-*/

@@ -1,8 +1,8 @@
 const express = require('express');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
-const User = require('../models/user');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
+const User = require('../models/user');
 
 const router = express.Router();
 
@@ -29,7 +29,7 @@ router.post('/join', isNotLoggedIn, async(req, res, next) => {
 });
 
 //로그인 하기 전이니까 req.user가 안 들어있음
-router.post('/login', isLoggedIn, (req, res, next) => {
+router.post('/login', isNotLoggedIn, (req, res, next) => {
     //미들웨어 내의 미들웨어에는 (req, res, next)를 붙임
     passport.authenticate('local', (authError, user, info) => {
         if(authError) {
